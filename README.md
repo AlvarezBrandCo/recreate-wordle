@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Recreate Wordle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1. Game Setup
 
-## Available Scripts
+## Word List
+- **Predefined Word List**: Load a list of valid 5-letter words.
+- **Hidden Word Selection**: Randomly select a hidden word from the list at the start of each game.
 
-In the project directory, you can run:
+## User Interface
+- **Input Field**: Create an input field where the player can enter a 5-letter word.
+- **Submit Button**: Add a button to submit the guess.
+- **Feedback Display**: Set up an area to display feedback for each guess.
+- **Guess History**: Create a section to show the history of guesses and feedback.
 
-### `npm start`
+# 2. Game Logic
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Input Handling
+- **Validate Length**: Ensure the guess is exactly 5 letters long.
+- **Check Validity**: Confirm the guess is a valid word from the word list.
+- **Prevent Duplicates**: Check if the guess has already been made and prevent duplicate guesses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Feedback Mechanism
+- **Correct Position**: Highlight letters that are correct and in the correct position (e.g., green).
+- **Incorrect Position**: Highlight letters that are correct but in the wrong position (e.g., yellow).
+- **Absent Letters**: Indicate letters that are not in the hidden word (e.g., gray).
 
-### `npm test`
+## Game Flow
+- **Start Game**: Initialize the game by selecting a random word from the word list.
+- **Guess Limit**: Allow the player up to 6 guesses.
+- **Check Win Condition**: If the player guesses the word correctly, display a win message.
+- **Check Loss Condition**: If the player exhausts all guesses without guessing the word, display a loss message and reveal the hidden word.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 3. Feedback and Updates
 
-### `npm run build`
+## Feedback Display
+- **Update UI**: After each guess, update the user interface to show the feedback.
+- **Color Coding**: Use specific colors (green for correct position, yellow for incorrect position, gray for absent letters) to provide clear feedback.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Guess History
+- **Track Guesses**: Maintain a record of all guesses made by the player.
+- **Display History**: Show the history of guesses along with the corresponding feedback.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 4. Error Handling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Invalid Input
+- **Notify Player**: Inform the player if the input is not a valid 5-letter word.
+- **Retry Input**: Allow the player to correct their input and try again.
 
-### `npm run eject`
+## Duplicate Guess
+- **Notify Player**: Inform the player if they have already guessed the word.
+- **Retry Guess**: Allow the player to make a new guess.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 5. End of Game
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Win Condition
+- **Display Message**: Congratulate the player and show a win message.
+- **Reveal Word**: Optionally, display the hidden word even if guessed correctly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Loss Condition
+- **Display Message**: Inform the player that they have lost and display a loss message.
+- **Reveal Word**: Show the hidden word that was not guessed.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 6. User Experience
 
-## Learn More
+## Instructions
+- **Game Rules**: Provide clear instructions on how to play the game.
+- **Feedback Explanation**: Explain what the colors mean in the feedback display.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Responsiveness
+- **Adapt to Devices**: Ensure the game interface works well on different devices and screen sizes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Accessibility
+- **Color Alternatives**: Provide alternatives to color-coding (e.g., patterns or text indicators) for colorblind players.
